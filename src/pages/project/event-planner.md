@@ -2,8 +2,10 @@
 layout: ../../layouts/project.astro
 title: Event planning
 client: Self
-publishDate: 2020-03-02 00:00:00
-img: '../../public/images/table.jpg'
+publishDate: 2022-08-12 00:00:00
+img: '/src/images/table.jpg'
+
+
 description: |
   We will help you create your dream event no matter what your budget is. We want you to enjoy and leave all the work to us.
 

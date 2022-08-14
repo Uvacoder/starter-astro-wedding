@@ -5,6 +5,7 @@ import Button from '../components/Button/index.jsx';
 import Nav from '../components/Nav/index.jsx';
 import Footer from '../components/Footer/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+import HoldingHands from '../images/holdinghands.jpg'
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob('./project/**/*.md');
@@ -206,11 +207,11 @@ const featuredProject = projects[0];
 	<body>
 		<Nav />
 		<header class="hero">
-			<img
+			<img 
 				width="1600"
 				height="1131"
 				class="img"
-				src="../../public/assets/holdinghands.jpg"
+				src={HoldingHands}
 				
 				sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
 			/>

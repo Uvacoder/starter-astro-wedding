@@ -2,8 +2,9 @@
 layout: ../../../layouts/project.astro
 title: Wedding Planning
 client: Self
-publishDate: 2020-03-04 00:00:00
-img: '../../public/images/rings.jpg'
+publishDate: 2022-08-12 00:00:00
+img: '/src/images/rings.jpg'
+
 description: |
   Regardless of whether you have an extensive spending plan or a private venture with constrained money-related assets, we have the energy, ability, and experience to make your event a novel and noteworthy for the best day of your life.
 
