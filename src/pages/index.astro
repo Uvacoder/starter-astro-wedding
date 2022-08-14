@@ -1,0 +1,264 @@
+---
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import Button from '../components/Button/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+import Footer from '../components/Footer/index.jsx';
+import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
+
+// Data Fetching: List all Markdown posts in the repo.
+const projects = await Astro.glob('./project/**/*.md');
+const featuredProject = projects[0];
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="Jeanine White: Personal Site"
+			description="Jeanine White: Developer, Speaker, and Writer..."
+		/>
+		<style lang="scss">
+			$w-s: 750px;
+			@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+			.hero {
+				position: relative;
+				overflow: hidden;
+
+				@media (min-width: $w-s) {
+					height: 45vw;
+				}
+			}
+
+			.img{
+				display: block;
+				width: 100%;
+				height: auto;
+				opacity: 0.8;
+			}
+
+			
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				
+
+				@media (min-width: $w-s) {
+					padding-left: 4rem;
+				}
+			}
+
+			.title {
+				font-weight: 500;
+				font-size: var(--f-u8);
+				margin-bottom: 0.5rem;
+				margin-top: 0;
+				color:  #fff;
+				-webkit-text-stroke-width: 1px;
+  				-webkit-text-stroke-color: rgba(46, 45, 45, 0.719);
+				font-family: 'Dancing Script', cursive;
+				@media (min-width: $w-s) {
+					font-size: var(--f-u18);
+				}
+			}
+
+			.grid {
+				display: grid;
+				grid-gap: 2rem;
+
+				@media (min-width: 1200px) {
+					grid-template-columns: 2fr 1fr;
+				}
+			}
+
+			.sectionTitle {
+				font-weight: 400;
+				font-family: var(--font-fami);
+				font-size: var(--f-u8);
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				color:var(--c-gray);
+				font-family: 'Dancing Script', cursive;
+			}
+		
+			.role {
+				position: relative;
+				display: inline-block;
+				font-weight: 500;
+				color: var(--t-bg);
+				background-color: var(--h-pink);
+				font-family: 'Dancing Script', cursive;
+				padding: 0.25em 0.5em;
+				font-size: var(--f-u2);
+				z-index: 2;
+				-webkit-text-stroke-width: 0.5px;
+  				-webkit-text-stroke-color: rgba(46, 45, 45, 0.719);
+			
+				.outline{
+				-webkit-text-stroke-width: 1px;
+  				-webkit-text-stroke-color: rgba(0, 0, 0, 0.185);
+			}
+				@media (min-width: $w-s) {
+					font-size: var(--f-u4);
+				}
+
+				+ .role {
+					margin-left: 1em;
+				}
+
+				&:nth-of-type(1) {
+					.invert {
+						background-color: var(--c-pink);
+					}
+				}
+
+				&:nth-of-type(2) {
+					.invert {
+						background-color: var(--c-blue);
+					}
+				}
+
+				&:nth-of-type(3) {
+					.invert {
+						background-color: var(--c-green);
+					}
+				}
+
+				&:hover {
+					.invert {
+						clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+					}
+				}
+			}
+
+			.invert {
+				position: absolute;
+				color: var(--t-fg);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
+				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+			}
+
+			.desc {
+				font-size: var(--f-u2);
+				margin-top: 1.5rem;
+				margin-bottom: 0;
+			}
+
+			.hello{
+				color: var(--h-pink);
+				font-family:var(--font-fami);
+				font-size: var(--f-u12);
+				font-family: 'Dancing Script', cursive;
+			}
+			.subtitle {
+				display: block;
+				font-weight: 400;
+				font-size: var(--f-d6);
+				letter-spacing: -0.0625em;
+			}
+			.read-link{
+				text-decoration: none;
+				color: var(--h-pink);
+	
+				font-size: var(--f-u5);
+				font-family: 'Dancing Script', cursive;
+
+			}
+			.hello-text{
+				font-size: var(--f-u2);
+				line-height: 1.5;
+				font-color: var(--h-gray);
+			}
+			
+			.bio {
+				line-height: 2;
+				margin-bottom: 2rem;
+
+				> span:first-of-type {
+					line-height: 1;
+					margin-bottom: 0.5em;
+					display: block;
+					font-weight: 700;
+					font-size: var(--f-u4);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<header class="hero">
+			<img
+				width="1600"
+				height="1131"
+				class="img"
+				src="../../public/images/holdinghands.jpg"
+				
+				sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
+			/>
+			<div class="overlay">
+				<h1 class="title">
+					Jeanine White
+				</h1>
+				<div>
+					<span class="role outline"> Wedding Photographer </span>
+					<span class="role outline"> Event Planner </span>
+					
+				</div>
+				
+			</div>
+		</header>
+		
+		<main class="wrapper mt4 mb4"><hr />
+			<div class="grid">
+				<div class="section">
+					<h3 class="sectionTitle">Plans</h3>
+					<PortfolioPreview project={featuredProject} />
+					<div class="tac mt4">
+						<a href="/projects">
+							<Button>View All</Button>
+						</a>
+					</div>
+				</div>
+				<div class="section">
+					<h3 class="sectionTitle">About me</h3>
+					<p class="bio">
+						<span class="hello">Hello!</span> 
+						<p class="hello-text">
+						I’m Jeanine, and this is my website. I'm a Wedding and Event Planner with vast experience and 
+						a passion for events. <br />
+						I'll make sure you have nothing to worry.
+						<br />
+						<br />
+
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic deserunt beatae quaerat necessitatibus consequuntur, eos, maxime, odit repellat fugit quo perspiciatis ipsum minus totam placeat? Id ipsa quia accusamus.
+						</p>
+				
+					</p>
+					<p>
+						<a href="/about" class="read-link">Read more</a>
+					</p>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,62 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+---
+
+<html lang="en">
+	<head>
+		<MainHead title="About | Jeanine White" description="About Jeanine White Lorem Ipsum" />
+		<style lang="scss">
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Raleway:wght@500;600&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+			.heroImg {
+				max-height: 36rem;
+				object-fit: cover;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+				}
+			}
+			.jeanine{
+				font-family: 'Dancing Script', cursive;
+			}
+			.bio {
+				font-size: var(--f-u1);
+				line-height: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<h1 class="jeanine">About Jeanine</h1>
+			<div class="heroImg">
+				<img
+					width="1400"
+					height="550"
+					src="../../public/images/bride.jpg"
+				/>
+			</div>
+			<div class="bio wrapper wrapper__readable mt8">
+				<h2>Hi! I'm Jeanine and i live for event planning</h2>
+				<h2>Some of my awards include:</h2>
+				<ul>
+					<li>Named World's Top 10 Event Planner by Wedding Planners Magazine</li>
+					<li>Top wedding organizer by Planners you need Magazine </li>
+					<li>Top event organizer by Biggest planning agency</li>
+					<li>Best event trend-setter by Home and Health </li>
+
+				</ul>
+				
+				<p>Having some expertise in the production of extraordinary events for private and corporate customers, 
+					we configure, plan and deal with each undertaking from origination to execution.</p>
+				<h4>Our adage is basic: Celebrate. Live. Love. Snicker. We anticipate making your next soiree.</h4>
+				
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
