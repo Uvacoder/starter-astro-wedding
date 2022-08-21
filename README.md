@@ -1,9 +1,9 @@
 # Portfolio page made using Astro 
-<h1 align="center">Check out how i made it on <a href="https://www.youtube.com/watch?v=QkY_rZpjEew"> my Youtube video </a> </h1>
+<h1 align="center">Check out how i made it on <a href="https://www.youtube.com/watch?v=QkY_rZpjEew target="_blank""> my Youtube video </a> </h1>
 
 <div align="center">
   <h3>
-    <a href="https://jeaninewhiteweddingportfolio.netlify.app/">
+    <a href="https://jeaninewhiteweddingportfolio.netlify.app/ target="_blank"">
       Live Ver
     </a>
  
