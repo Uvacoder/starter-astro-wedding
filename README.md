@@ -1,3 +1,21 @@
+# Portfolio page made using Astro 
+<h1 align="center">Check out how i made it on <a href="https://www.youtube.com/watch?v=QkY_rZpjEew"> my Youtube video </a> </h1>
+
+<div align="center">
+  <h3>
+    <a href="https://jeaninewhiteweddingportfolio.netlify.app/">
+      Live Ver
+    </a>
+ 
+  </h3>
+</div>
+
+![Screenshot (388)](https://user-images.githubusercontent.com/80093500/185816220-638f09d0-a87d-4248-a1d8-84f23f43fc0c.png)
+
+
+
+
+
 # Astro Starter Kit: Portfolio
 
 ```
