@@ -3,7 +3,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://jeaninewhiteweddingportfolio.netlify.app/ target="_blank"">
+    <a href="https://jeaninewhiteweddingportfolio.netlify.app/">
       Live Ver
     </a>
  
